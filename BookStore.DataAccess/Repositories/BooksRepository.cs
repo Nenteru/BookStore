@@ -43,13 +43,13 @@ namespace BookStore.DataAccess.Repositories
             return bookEntity.Id;
         }
 
-        public async Task<Guid> Update(Guid id, string title, string descriprion, decimal price)
+        public async Task<Guid> Update(Guid id, string title, string description, decimal price)
         {
             await _context.Books
                 .Where(b => b.Id == id)
                 .ExecuteUpdateAsync(x => x
                     .SetProperty(x => x.Title, x => title)
-                    .SetProperty(x => x.Description, x => descriprion)
+                    .SetProperty(x => x.Description, x => description)
                     .SetProperty(x => x.Price, x => price));
 
             return id;
