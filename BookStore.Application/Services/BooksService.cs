@@ -26,5 +26,9 @@ namespace BookStore.Application.Services
         {
             return await _booksRepository.Update(id, title, description, price);
         }
+
+        public async Task<Guid> DeleteBook(Guid id)
+        {
+            return await _booksRepository.Delete(id);        }
     }
 }
