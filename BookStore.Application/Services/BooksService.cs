@@ -12,7 +12,7 @@ namespace BookStore.Application.Services
             _booksRepository = booksRepository;
         }
 
-        public async Task<List<Book>> GetListBooksAsync()
+        public async Task<List<Book>> GetListBooks()
         {
             return await _booksRepository.Get();
         }
